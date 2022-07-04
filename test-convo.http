@@ -1,0 +1,56 @@
+@conversation_id = test_convo_2
+
+POST http://localhost:5005/webhooks/rest/webhook
+content-type: application/json
+
+{
+  "sender": "{{conversation_id}}",
+  "message": "block my savings account"
+}
+###
+POST http://localhost:5005/webhooks/rest/webhook
+content-type: application/json
+
+{
+  "sender": "{{conversation_id}}",
+  "message": "hello"
+}
+
+###
+POST http://localhost:5005/webhooks/rest/webhook
+content-type: application/json
+
+{
+  "sender": "{{conversation_id}}",
+  "message": "are you a bot?"
+}
+
+###
+POST http://localhost:5005/webhooks/rest/webhook
+content-type: application/json
+
+{
+  "sender": "{{conversation_id}}",
+  "message": "block my checking account"
+}
+###
+POST http://localhost:5005/webhooks/rest/webhook
+content-type: application/json
+
+{
+  "sender": "{{conversation_id}}",
+  "message": "/restart"
+}
+
+###
+GET http://localhost:5005/conversations/{{conversation_id}}/tracker
+content-type: application/json
+
+
+###
+GET http://localhost:5005/conversations/{{conversation_id}}/tracker?include_events=ALL
+content-type: application/json
+
+###
+GET http://localhost:5005/conversations/{{conversation_id}}/story
+content-type: application/json

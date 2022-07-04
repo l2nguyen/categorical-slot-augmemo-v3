@@ -1,0 +1,320 @@
+2022-07-04 09:56:06 DEBUG    rasa.core.lock_store  - Issuing ticket for conversation 'test_convo_diff_value'.
+2022-07-04 09:56:06 DEBUG    rasa.core.lock_store  - Acquiring lock for conversation 'test_convo_diff_value'.
+2022-07-04 09:56:06 DEBUG    rasa.core.lock_store  - Acquired lock for conversation 'test_convo_diff_value'.
+2022-07-04 09:56:06 DEBUG    rasa.core.tracker_store  - Could not find tracker for conversation ID 'test_convo_diff_value'.
+2022-07-04 09:56:06 DEBUG    rasa.core.processor  - Starting a new session for conversation ID 'test_convo_diff_value'.
+2022-07-04 09:56:06 DEBUG    rasa.core.processor  - Policy prediction ended with events '[]'.
+2022-07-04 09:56:06 DEBUG    rasa.core.processor  - Action 'action_session_start' ended with events '[<rasa.shared.core.events.SessionStarted object at 0x7fc67471c670>, ActionExecuted(action: action_listen, policy: None, confidence: None)]'.
+2022-07-04 09:56:06 DEBUG    rasa.core.processor  - Current slot values: 
+        account_type: None
+        session_started_metadata: None
+2022-07-04 09:56:06 DEBUG    rasa.engine.runner.dask  - Running graph with inputs: {'__message__': [<rasa.core.channels.channel.UserMessage object at 0x7fc63e682d30>]}, targets: ['run_RegexMessageHandler'] and ExecutionContext(model_id='2d651ce4924743e992724262289f4d4d', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-07-04 09:56:06 DEBUG    rasa.engine.graph  - Node 'nlu_message_converter' running 'NLUMessageConverter.convert_user_message'.
+2022-07-04 09:56:06 DEBUG    rasa.engine.graph  - Node 'run_WhitespaceTokenizer0' running 'WhitespaceTokenizer.process'.
+2022-07-04 09:56:06 DEBUG    rasa.engine.graph  - Node 'run_RegexFeaturizer1' running 'RegexFeaturizer.process'.
+2022-07-04 09:56:06 DEBUG    rasa.engine.graph  - Node 'run_LexicalSyntacticFeaturizer2' running 'LexicalSyntacticFeaturizer.process'.
+2022-07-04 09:56:06 DEBUG    rasa.engine.graph  - Node 'run_CountVectorsFeaturizer3' running 'CountVectorsFeaturizer.process'.
+2022-07-04 09:56:06 DEBUG    rasa.engine.graph  - Node 'run_CountVectorsFeaturizer4' running 'CountVectorsFeaturizer.process'.
+2022-07-04 09:56:06 DEBUG    rasa.engine.graph  - Node 'run_DIETClassifier5' running 'DIETClassifier.process'.
+2022-07-04 09:56:06 DEBUG    rasa.engine.graph  - Node 'run_EntitySynonymMapper6' running 'EntitySynonymMapper.process'.
+2022-07-04 09:56:06 DEBUG    rasa.engine.graph  - Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-07-04 09:56:06 DEBUG    rasa.engine.graph  - Node 'run_RegexMessageHandler' running 'RegexMessageHandler.process'.
+2022-07-04 09:56:06 DEBUG    rasa.core.processor  - Received user message 'block my savings account' with intent '{'name': 'block', 'confidence': 0.9993466734886169}' and entities '[{'entity': 'account_type', 'start': 9, 'end': 16, 'confidence_entity': 0.9961161613464355, 'value': 'savings', 'extractor': 'DIETClassifier'}]'
+2022-07-04 09:56:06 DEBUG    rasa.core.processor  - Current slot values: 
+        account_type: None
+        session_started_metadata: None
+2022-07-04 09:56:06 DEBUG    rasa.core.processor  - Logged UserUtterance - tracker now has 4 events.
+2022-07-04 09:56:06 DEBUG    rasa.core.actions.action  - Validating extracted slots: account_type
+2022-07-04 09:56:06 DEBUG    rasa.core.processor  - Default action 'action_extract_slots' was executed, resulting in 1 events: SlotSet(key: account_type, value: savings)
+2022-07-04 09:56:06 DEBUG    rasa.engine.runner.dask  - Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fc63e682dc0>}, targets: ['select_prediction'] and ExecutionContext(model_id='2d651ce4924743e992724262289f4d4d', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-07-04 09:56:06 DEBUG    rasa.engine.graph  - Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2022-07-04 09:56:06 DEBUG    rasa.engine.graph  - Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-07-04 09:56:06 DEBUG    rasa.engine.graph  - Node 'run_AugmentedMemoizationPolicy0' running 'AugmentedMemoizationPolicy.predict_action_probabilities'.
+2022-07-04 09:56:06 DEBUG    rasa.core.policies.memoization  - Current tracker state:
+[state 1] user intent: block | user entities: ('account_type',) | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+2022-07-04 09:56:06 DEBUG    rasa.core.policies.memoization  - There is a memorised next action 'utter_block_account'
+2022-07-04 09:56:06 DEBUG    rasa.engine.graph  - Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2022-07-04 09:56:06 DEBUG    rasa.core.policies.rule_policy  - Current tracker state:
+[state 1] user text: block my savings account | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+2022-07-04 09:56:06 DEBUG    rasa.core.policies.rule_policy  - There is no applicable rule.
+2022-07-04 09:56:06 DEBUG    rasa.core.policies.rule_policy  - Current tracker state:
+[state 1] user intent: block | user entities: ('account_type',) | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+2022-07-04 09:56:06 DEBUG    rasa.core.policies.rule_policy  - There is no applicable rule.
+2022-07-04 09:56:06 DEBUG    rasa.engine.graph  - Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2022-07-04 09:56:06 DEBUG    rasa.core.policies.ensemble  - Made prediction using user intent.
+2022-07-04 09:56:06 DEBUG    rasa.core.policies.ensemble  - Added `DefinePrevUserUtteredFeaturization(False)` event.
+2022-07-04 09:56:06 DEBUG    rasa.core.policies.ensemble  - Predicted next action using AugmentedMemoizationPolicy.
+2022-07-04 09:56:06 DEBUG    rasa.core.processor  - Predicted next action 'utter_block_account' with confidence 1.00.
+2022-07-04 09:56:06 DEBUG    rasa.core.processor  - Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x7fc66c734190>]'.
+2022-07-04 09:56:06 DEBUG    rasa.core.processor  - Action 'utter_block_account' ended with events '[BotUttered('your account has been blocked', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"utter_action": "utter_block_account"}, 1656928566.1572232)]'.
+2022-07-04 09:56:06 DEBUG    rasa.engine.runner.dask  - Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fc63e682dc0>}, targets: ['select_prediction'] and ExecutionContext(model_id='2d651ce4924743e992724262289f4d4d', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-07-04 09:56:06 DEBUG    rasa.engine.graph  - Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2022-07-04 09:56:06 DEBUG    rasa.engine.graph  - Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-07-04 09:56:06 DEBUG    rasa.engine.graph  - Node 'run_AugmentedMemoizationPolicy0' running 'AugmentedMemoizationPolicy.predict_action_probabilities'.
+2022-07-04 09:56:06 DEBUG    rasa.core.policies.memoization  - Current tracker state:
+[state 1] user intent: block | user entities: ('account_type',) | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 2] user intent: block | user entities: ('account_type',) | previous action name: utter_block_account | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+2022-07-04 09:56:06 DEBUG    rasa.core.policies.memoization  - There is a memorised next action 'action_listen'
+2022-07-04 09:56:06 DEBUG    rasa.engine.graph  - Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2022-07-04 09:56:06 DEBUG    rasa.core.policies.rule_policy  - Current tracker state:
+[state 1] user intent: block | user entities: ('account_type',) | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 2] user intent: block | user entities: ('account_type',) | previous action name: utter_block_account | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+2022-07-04 09:56:06 DEBUG    rasa.core.policies.rule_policy  - There is no applicable rule.
+2022-07-04 09:56:06 DEBUG    rasa.engine.graph  - Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2022-07-04 09:56:06 DEBUG    rasa.core.policies.ensemble  - Predicted next action using AugmentedMemoizationPolicy.
+2022-07-04 09:56:06 DEBUG    rasa.core.processor  - Predicted next action 'action_listen' with confidence 1.00.
+2022-07-04 09:56:06 DEBUG    rasa.core.processor  - Policy prediction ended with events '[]'.
+2022-07-04 09:56:06 DEBUG    rasa.core.processor  - Action 'action_listen' ended with events '[]'.
+2022-07-04 09:56:06 DEBUG    rasa.core.lock_store  - Deleted lock for conversation 'test_convo_diff_value'.
+2022-07-04 09:56:08 DEBUG    rasa.core.lock_store  - Issuing ticket for conversation 'test_convo_diff_value'.
+2022-07-04 09:56:08 DEBUG    rasa.core.lock_store  - Acquiring lock for conversation 'test_convo_diff_value'.
+2022-07-04 09:56:08 DEBUG    rasa.core.lock_store  - Acquired lock for conversation 'test_convo_diff_value'.
+2022-07-04 09:56:08 DEBUG    rasa.core.tracker_store  - Recreating tracker for id 'test_convo_diff_value'
+2022-07-04 09:56:08 DEBUG    rasa.engine.runner.dask  - Running graph with inputs: {'__message__': [<rasa.core.channels.channel.UserMessage object at 0x7fc63e682b80>]}, targets: ['run_RegexMessageHandler'] and ExecutionContext(model_id='2d651ce4924743e992724262289f4d4d', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-07-04 09:56:08 DEBUG    rasa.engine.graph  - Node 'nlu_message_converter' running 'NLUMessageConverter.convert_user_message'.
+2022-07-04 09:56:08 DEBUG    rasa.engine.graph  - Node 'run_WhitespaceTokenizer0' running 'WhitespaceTokenizer.process'.
+2022-07-04 09:56:08 DEBUG    rasa.engine.graph  - Node 'run_RegexFeaturizer1' running 'RegexFeaturizer.process'.
+2022-07-04 09:56:08 DEBUG    rasa.engine.graph  - Node 'run_LexicalSyntacticFeaturizer2' running 'LexicalSyntacticFeaturizer.process'.
+2022-07-04 09:56:08 DEBUG    rasa.engine.graph  - Node 'run_CountVectorsFeaturizer3' running 'CountVectorsFeaturizer.process'.
+2022-07-04 09:56:08 DEBUG    rasa.engine.graph  - Node 'run_CountVectorsFeaturizer4' running 'CountVectorsFeaturizer.process'.
+2022-07-04 09:56:08 DEBUG    rasa.engine.graph  - Node 'run_DIETClassifier5' running 'DIETClassifier.process'.
+2022-07-04 09:56:08 DEBUG    rasa.engine.graph  - Node 'run_EntitySynonymMapper6' running 'EntitySynonymMapper.process'.
+2022-07-04 09:56:08 DEBUG    rasa.engine.graph  - Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-07-04 09:56:08 DEBUG    rasa.engine.graph  - Node 'run_RegexMessageHandler' running 'RegexMessageHandler.process'.
+2022-07-04 09:56:08 DEBUG    rasa.core.processor  - Received user message 'hello' with intent '{'name': 'greet', 'confidence': 0.9999970197677612}' and entities '[]'
+2022-07-04 09:56:08 DEBUG    rasa.core.processor  - Logged UserUtterance - tracker now has 10 events.
+2022-07-04 09:56:08 DEBUG    rasa.core.actions.action  - Validating extracted slots: 
+2022-07-04 09:56:08 DEBUG    rasa.core.processor  - Default action 'action_extract_slots' was executed, resulting in 0 events: 
+2022-07-04 09:56:08 DEBUG    rasa.engine.runner.dask  - Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fc63e682670>}, targets: ['select_prediction'] and ExecutionContext(model_id='2d651ce4924743e992724262289f4d4d', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-07-04 09:56:08 DEBUG    rasa.engine.graph  - Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2022-07-04 09:56:08 DEBUG    rasa.engine.graph  - Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-07-04 09:56:08 DEBUG    rasa.engine.graph  - Node 'run_AugmentedMemoizationPolicy0' running 'AugmentedMemoizationPolicy.predict_action_probabilities'.
+2022-07-04 09:56:08 DEBUG    rasa.core.policies.memoization  - Current tracker state:
+[state 1] user intent: block | user entities: ('account_type',) | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 2] user intent: block | user entities: ('account_type',) | previous action name: utter_block_account | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 3] user intent: greet | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+2022-07-04 09:56:08 DEBUG    rasa.core.policies.memoization  - Launch DeLorean...
+2022-07-04 09:56:08 DEBUG    rasa.core.policies.memoization  - Current tracker state [{}, {'user': {'intent': 'greet'}, 'prev_action': {'action_name': 'action_listen'}}]
+2022-07-04 09:56:08 DEBUG    rasa.core.policies.memoization  - There is a memorised next action 'utter_greet'
+2022-07-04 09:56:08 DEBUG    rasa.engine.graph  - Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2022-07-04 09:56:08 DEBUG    rasa.core.policies.rule_policy  - Current tracker state:
+[state 1] user intent: block | user entities: ('account_type',) | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 2] user intent: block | user entities: ('account_type',) | previous action name: utter_block_account | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 3] user text: hello | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+2022-07-04 09:56:08 DEBUG    rasa.core.policies.rule_policy  - There is no applicable rule.
+2022-07-04 09:56:08 DEBUG    rasa.core.policies.rule_policy  - Current tracker state:
+[state 1] user intent: block | user entities: ('account_type',) | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 2] user intent: block | user entities: ('account_type',) | previous action name: utter_block_account | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 3] user intent: greet | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+2022-07-04 09:56:08 DEBUG    rasa.core.policies.rule_policy  - There is no applicable rule.
+2022-07-04 09:56:08 DEBUG    rasa.engine.graph  - Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2022-07-04 09:56:08 DEBUG    rasa.core.policies.ensemble  - Made prediction using user intent.
+2022-07-04 09:56:08 DEBUG    rasa.core.policies.ensemble  - Added `DefinePrevUserUtteredFeaturization(False)` event.
+2022-07-04 09:56:08 DEBUG    rasa.core.policies.ensemble  - Predicted next action using AugmentedMemoizationPolicy.
+2022-07-04 09:56:08 DEBUG    rasa.core.processor  - Predicted next action 'utter_greet' with confidence 1.00.
+2022-07-04 09:56:08 DEBUG    rasa.core.processor  - Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x7fc66d223340>]'.
+2022-07-04 09:56:08 DEBUG    rasa.core.processor  - Action 'utter_greet' ended with events '[BotUttered('Hey! How are you?', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"utter_action": "utter_greet"}, 1656928568.4301527)]'.
+2022-07-04 09:56:08 DEBUG    rasa.engine.runner.dask  - Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fc63e682670>}, targets: ['select_prediction'] and ExecutionContext(model_id='2d651ce4924743e992724262289f4d4d', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-07-04 09:56:08 DEBUG    rasa.engine.graph  - Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2022-07-04 09:56:08 DEBUG    rasa.engine.graph  - Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-07-04 09:56:08 DEBUG    rasa.engine.graph  - Node 'run_AugmentedMemoizationPolicy0' running 'AugmentedMemoizationPolicy.predict_action_probabilities'.
+2022-07-04 09:56:08 DEBUG    rasa.core.policies.memoization  - Current tracker state:
+[state 1] user intent: block | user entities: ('account_type',) | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 2] user intent: block | user entities: ('account_type',) | previous action name: utter_block_account | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 3] user intent: greet | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 4] user intent: greet | previous action name: utter_greet | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+2022-07-04 09:56:08 DEBUG    rasa.core.policies.memoization  - Launch DeLorean...
+2022-07-04 09:56:08 DEBUG    rasa.core.policies.memoization  - Current tracker state [{}, {'user': {'intent': 'greet'}, 'prev_action': {'action_name': 'action_listen'}}, {'user': {'intent': 'greet'}, 'prev_action': {'action_name': 'utter_greet'}}]
+2022-07-04 09:56:08 DEBUG    rasa.core.policies.memoization  - There is a memorised next action 'action_listen'
+2022-07-04 09:56:08 DEBUG    rasa.engine.graph  - Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2022-07-04 09:56:08 DEBUG    rasa.core.policies.rule_policy  - Current tracker state:
+[state 1] user intent: block | user entities: ('account_type',) | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 2] user intent: block | user entities: ('account_type',) | previous action name: utter_block_account | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 3] user intent: greet | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 4] user intent: greet | previous action name: utter_greet | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+2022-07-04 09:56:08 DEBUG    rasa.core.policies.rule_policy  - There is no applicable rule.
+2022-07-04 09:56:08 DEBUG    rasa.engine.graph  - Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2022-07-04 09:56:08 DEBUG    rasa.core.policies.ensemble  - Predicted next action using AugmentedMemoizationPolicy.
+2022-07-04 09:56:08 DEBUG    rasa.core.processor  - Predicted next action 'action_listen' with confidence 1.00.
+2022-07-04 09:56:08 DEBUG    rasa.core.processor  - Policy prediction ended with events '[]'.
+2022-07-04 09:56:08 DEBUG    rasa.core.processor  - Action 'action_listen' ended with events '[]'.
+2022-07-04 09:56:08 DEBUG    rasa.core.lock_store  - Deleted lock for conversation 'test_convo_diff_value'.
+2022-07-04 09:56:09 DEBUG    rasa.core.lock_store  - Issuing ticket for conversation 'test_convo_diff_value'.
+2022-07-04 09:56:09 DEBUG    rasa.core.lock_store  - Acquiring lock for conversation 'test_convo_diff_value'.
+2022-07-04 09:56:09 DEBUG    rasa.core.lock_store  - Acquired lock for conversation 'test_convo_diff_value'.
+2022-07-04 09:56:09 DEBUG    rasa.core.tracker_store  - Recreating tracker for id 'test_convo_diff_value'
+2022-07-04 09:56:09 DEBUG    rasa.engine.runner.dask  - Running graph with inputs: {'__message__': [<rasa.core.channels.channel.UserMessage object at 0x7fc66d44d8e0>]}, targets: ['run_RegexMessageHandler'] and ExecutionContext(model_id='2d651ce4924743e992724262289f4d4d', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-07-04 09:56:09 DEBUG    rasa.engine.graph  - Node 'nlu_message_converter' running 'NLUMessageConverter.convert_user_message'.
+2022-07-04 09:56:09 DEBUG    rasa.engine.graph  - Node 'run_WhitespaceTokenizer0' running 'WhitespaceTokenizer.process'.
+2022-07-04 09:56:09 DEBUG    rasa.engine.graph  - Node 'run_RegexFeaturizer1' running 'RegexFeaturizer.process'.
+2022-07-04 09:56:09 DEBUG    rasa.engine.graph  - Node 'run_LexicalSyntacticFeaturizer2' running 'LexicalSyntacticFeaturizer.process'.
+2022-07-04 09:56:09 DEBUG    rasa.engine.graph  - Node 'run_CountVectorsFeaturizer3' running 'CountVectorsFeaturizer.process'.
+2022-07-04 09:56:09 DEBUG    rasa.engine.graph  - Node 'run_CountVectorsFeaturizer4' running 'CountVectorsFeaturizer.process'.
+2022-07-04 09:56:09 DEBUG    rasa.engine.graph  - Node 'run_DIETClassifier5' running 'DIETClassifier.process'.
+2022-07-04 09:56:09 DEBUG    rasa.engine.graph  - Node 'run_EntitySynonymMapper6' running 'EntitySynonymMapper.process'.
+2022-07-04 09:56:09 DEBUG    rasa.engine.graph  - Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-07-04 09:56:09 DEBUG    rasa.engine.graph  - Node 'run_RegexMessageHandler' running 'RegexMessageHandler.process'.
+2022-07-04 09:56:09 DEBUG    rasa.core.processor  - Received user message 'hello' with intent '{'name': 'greet', 'confidence': 0.9999970197677612}' and entities '[]'
+2022-07-04 09:56:09 DEBUG    rasa.core.processor  - Logged UserUtterance - tracker now has 15 events.
+2022-07-04 09:56:09 DEBUG    rasa.core.actions.action  - Validating extracted slots: 
+2022-07-04 09:56:09 DEBUG    rasa.core.processor  - Default action 'action_extract_slots' was executed, resulting in 0 events: 
+2022-07-04 09:56:09 DEBUG    rasa.engine.runner.dask  - Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fc66c715940>}, targets: ['select_prediction'] and ExecutionContext(model_id='2d651ce4924743e992724262289f4d4d', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-07-04 09:56:09 DEBUG    rasa.engine.graph  - Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2022-07-04 09:56:09 DEBUG    rasa.engine.graph  - Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-07-04 09:56:09 DEBUG    rasa.engine.graph  - Node 'run_AugmentedMemoizationPolicy0' running 'AugmentedMemoizationPolicy.predict_action_probabilities'.
+2022-07-04 09:56:09 DEBUG    rasa.core.policies.memoization  - Current tracker state:
+[state 1] user intent: block | user entities: ('account_type',) | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 2] user intent: block | user entities: ('account_type',) | previous action name: utter_block_account | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 3] user intent: greet | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 4] user intent: greet | previous action name: utter_greet | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 5] user intent: greet | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+2022-07-04 09:56:09 DEBUG    rasa.core.policies.memoization  - Launch DeLorean...
+2022-07-04 09:56:09 DEBUG    rasa.core.policies.memoization  - Current tracker state [{}, {'user': {'intent': 'greet'}, 'prev_action': {'action_name': 'action_listen'}}]
+2022-07-04 09:56:09 DEBUG    rasa.core.policies.memoization  - There is a memorised next action 'utter_greet'
+2022-07-04 09:56:09 DEBUG    rasa.engine.graph  - Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2022-07-04 09:56:09 DEBUG    rasa.core.policies.rule_policy  - Current tracker state:
+[state 1] user intent: block | user entities: ('account_type',) | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 2] user intent: block | user entities: ('account_type',) | previous action name: utter_block_account | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 3] user intent: greet | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 4] user intent: greet | previous action name: utter_greet | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 5] user text: hello | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+2022-07-04 09:56:09 DEBUG    rasa.core.policies.rule_policy  - There is no applicable rule.
+2022-07-04 09:56:09 DEBUG    rasa.core.policies.rule_policy  - Current tracker state:
+[state 1] user intent: block | user entities: ('account_type',) | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 2] user intent: block | user entities: ('account_type',) | previous action name: utter_block_account | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 3] user intent: greet | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 4] user intent: greet | previous action name: utter_greet | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 5] user intent: greet | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+2022-07-04 09:56:09 DEBUG    rasa.core.policies.rule_policy  - There is no applicable rule.
+2022-07-04 09:56:09 DEBUG    rasa.engine.graph  - Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2022-07-04 09:56:09 DEBUG    rasa.core.policies.ensemble  - Made prediction using user intent.
+2022-07-04 09:56:09 DEBUG    rasa.core.policies.ensemble  - Added `DefinePrevUserUtteredFeaturization(False)` event.
+2022-07-04 09:56:09 DEBUG    rasa.core.policies.ensemble  - Predicted next action using AugmentedMemoizationPolicy.
+2022-07-04 09:56:09 DEBUG    rasa.core.processor  - Predicted next action 'utter_greet' with confidence 1.00.
+2022-07-04 09:56:09 DEBUG    rasa.core.processor  - Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x7fc6746dc2b0>]'.
+2022-07-04 09:56:09 DEBUG    rasa.core.processor  - Action 'utter_greet' ended with events '[BotUttered('Hey! How are you?', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"utter_action": "utter_greet"}, 1656928569.2301362)]'.
+2022-07-04 09:56:09 DEBUG    rasa.engine.runner.dask  - Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fc66c715940>}, targets: ['select_prediction'] and ExecutionContext(model_id='2d651ce4924743e992724262289f4d4d', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-07-04 09:56:09 DEBUG    rasa.engine.graph  - Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2022-07-04 09:56:09 DEBUG    rasa.engine.graph  - Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-07-04 09:56:09 DEBUG    rasa.engine.graph  - Node 'run_AugmentedMemoizationPolicy0' running 'AugmentedMemoizationPolicy.predict_action_probabilities'.
+2022-07-04 09:56:09 DEBUG    rasa.core.policies.memoization  - Current tracker state:
+[state 1] user intent: block | user entities: ('account_type',) | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 2] user intent: block | user entities: ('account_type',) | previous action name: utter_block_account | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 3] user intent: greet | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 4] user intent: greet | previous action name: utter_greet | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 5] user intent: greet | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 6] user intent: greet | previous action name: utter_greet | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+2022-07-04 09:56:09 DEBUG    rasa.core.policies.memoization  - Launch DeLorean...
+2022-07-04 09:56:09 DEBUG    rasa.core.policies.memoization  - Current tracker state [{}, {'user': {'intent': 'greet'}, 'prev_action': {'action_name': 'action_listen'}}, {'user': {'intent': 'greet'}, 'prev_action': {'action_name': 'utter_greet'}}]
+2022-07-04 09:56:09 DEBUG    rasa.core.policies.memoization  - There is a memorised next action 'action_listen'
+2022-07-04 09:56:09 DEBUG    rasa.engine.graph  - Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2022-07-04 09:56:09 DEBUG    rasa.core.policies.rule_policy  - Current tracker state:
+[state 1] user intent: block | user entities: ('account_type',) | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 2] user intent: block | user entities: ('account_type',) | previous action name: utter_block_account | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 3] user intent: greet | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 4] user intent: greet | previous action name: utter_greet | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 5] user intent: greet | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 6] user intent: greet | previous action name: utter_greet | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+2022-07-04 09:56:09 DEBUG    rasa.core.policies.rule_policy  - There is no applicable rule.
+2022-07-04 09:56:09 DEBUG    rasa.engine.graph  - Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2022-07-04 09:56:09 DEBUG    rasa.core.policies.ensemble  - Predicted next action using AugmentedMemoizationPolicy.
+2022-07-04 09:56:09 DEBUG    rasa.core.processor  - Predicted next action 'action_listen' with confidence 1.00.
+2022-07-04 09:56:09 DEBUG    rasa.core.processor  - Policy prediction ended with events '[]'.
+2022-07-04 09:56:09 DEBUG    rasa.core.processor  - Action 'action_listen' ended with events '[]'.
+2022-07-04 09:56:09 DEBUG    rasa.core.lock_store  - Deleted lock for conversation 'test_convo_diff_value'.
+2022-07-04 09:56:11 DEBUG    rasa.core.lock_store  - Issuing ticket for conversation 'test_convo_diff_value'.
+2022-07-04 09:56:11 DEBUG    rasa.core.lock_store  - Acquiring lock for conversation 'test_convo_diff_value'.
+2022-07-04 09:56:11 DEBUG    rasa.core.lock_store  - Acquired lock for conversation 'test_convo_diff_value'.
+2022-07-04 09:56:11 DEBUG    rasa.core.tracker_store  - Recreating tracker for id 'test_convo_diff_value'
+2022-07-04 09:56:11 DEBUG    rasa.engine.runner.dask  - Running graph with inputs: {'__message__': [<rasa.core.channels.channel.UserMessage object at 0x7fc66d44d820>]}, targets: ['run_RegexMessageHandler'] and ExecutionContext(model_id='2d651ce4924743e992724262289f4d4d', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-07-04 09:56:11 DEBUG    rasa.engine.graph  - Node 'nlu_message_converter' running 'NLUMessageConverter.convert_user_message'.
+2022-07-04 09:56:11 DEBUG    rasa.engine.graph  - Node 'run_WhitespaceTokenizer0' running 'WhitespaceTokenizer.process'.
+2022-07-04 09:56:11 DEBUG    rasa.engine.graph  - Node 'run_RegexFeaturizer1' running 'RegexFeaturizer.process'.
+2022-07-04 09:56:11 DEBUG    rasa.engine.graph  - Node 'run_LexicalSyntacticFeaturizer2' running 'LexicalSyntacticFeaturizer.process'.
+2022-07-04 09:56:11 DEBUG    rasa.engine.graph  - Node 'run_CountVectorsFeaturizer3' running 'CountVectorsFeaturizer.process'.
+2022-07-04 09:56:11 DEBUG    rasa.engine.graph  - Node 'run_CountVectorsFeaturizer4' running 'CountVectorsFeaturizer.process'.
+2022-07-04 09:56:11 DEBUG    rasa.engine.graph  - Node 'run_DIETClassifier5' running 'DIETClassifier.process'.
+2022-07-04 09:56:11 DEBUG    rasa.engine.graph  - Node 'run_EntitySynonymMapper6' running 'EntitySynonymMapper.process'.
+2022-07-04 09:56:11 DEBUG    rasa.engine.graph  - Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-07-04 09:56:11 DEBUG    rasa.engine.graph  - Node 'run_RegexMessageHandler' running 'RegexMessageHandler.process'.
+2022-07-04 09:56:11 DEBUG    rasa.core.processor  - Received user message 'block my checking account' with intent '{'name': 'block', 'confidence': 0.9994102716445923}' and entities '[{'entity': 'account_type', 'start': 9, 'end': 17, 'confidence_entity': 0.9972544312477112, 'value': 'checking', 'extractor': 'DIETClassifier'}]'
+2022-07-04 09:56:11 DEBUG    rasa.core.processor  - Current slot values: 
+        account_type: savings
+        session_started_metadata: None
+2022-07-04 09:56:11 DEBUG    rasa.core.processor  - Logged UserUtterance - tracker now has 20 events.
+2022-07-04 09:56:11 DEBUG    rasa.core.actions.action  - Validating extracted slots: account_type
+2022-07-04 09:56:11 DEBUG    rasa.core.processor  - Default action 'action_extract_slots' was executed, resulting in 1 events: SlotSet(key: account_type, value: checking)
+2022-07-04 09:56:11 DEBUG    rasa.engine.runner.dask  - Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fc63e682d30>}, targets: ['select_prediction'] and ExecutionContext(model_id='2d651ce4924743e992724262289f4d4d', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-07-04 09:56:11 DEBUG    rasa.engine.graph  - Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2022-07-04 09:56:11 DEBUG    rasa.engine.graph  - Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-07-04 09:56:11 DEBUG    rasa.engine.graph  - Node 'run_AugmentedMemoizationPolicy0' running 'AugmentedMemoizationPolicy.predict_action_probabilities'.
+2022-07-04 09:56:11 DEBUG    rasa.core.policies.memoization  - Current tracker state:
+[state 1] user intent: block | user entities: ('account_type',) | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 2] user intent: block | user entities: ('account_type',) | previous action name: utter_block_account | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 3] user intent: greet | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 4] user intent: greet | previous action name: utter_greet | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 5] user intent: greet | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 6] user intent: greet | previous action name: utter_greet | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 7] user intent: block | user entities: ('account_type',) | previous action name: action_listen | slots: {'account_type': (0.0, 1.0, 0.0, 0.0)}
+2022-07-04 09:56:11 DEBUG    rasa.core.policies.memoization  - Launch DeLorean...
+2022-07-04 09:56:11 DEBUG    rasa.core.policies.memoization  - Current tracker state [{}, {'user': {'intent': 'block', 'entities': ('account_type',)}, 'slots': {'account_type': (0.0, 1.0, 0.0, 0.0)}, 'prev_action': {'action_name': 'action_listen'}}]
+2022-07-04 09:56:11 DEBUG    rasa.core.policies.memoization  - There is a memorised next action 'utter_checking'
+2022-07-04 09:56:11 DEBUG    rasa.engine.graph  - Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2022-07-04 09:56:11 DEBUG    rasa.core.policies.rule_policy  - Current tracker state:
+[state 1] user intent: block | user entities: ('account_type',) | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 2] user intent: block | user entities: ('account_type',) | previous action name: utter_block_account | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 3] user intent: greet | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 4] user intent: greet | previous action name: utter_greet | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 5] user intent: greet | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 6] user intent: greet | previous action name: utter_greet | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 7] user text: block my checking account | previous action name: action_listen | slots: {'account_type': (0.0, 1.0, 0.0, 0.0)}
+2022-07-04 09:56:11 DEBUG    rasa.core.policies.rule_policy  - There is no applicable rule.
+2022-07-04 09:56:11 DEBUG    rasa.core.policies.rule_policy  - Current tracker state:
+[state 1] user intent: block | user entities: ('account_type',) | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 2] user intent: block | user entities: ('account_type',) | previous action name: utter_block_account | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 3] user intent: greet | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 4] user intent: greet | previous action name: utter_greet | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 5] user intent: greet | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 6] user intent: greet | previous action name: utter_greet | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 7] user intent: block | user entities: ('account_type',) | previous action name: action_listen | slots: {'account_type': (0.0, 1.0, 0.0, 0.0)}
+2022-07-04 09:56:11 DEBUG    rasa.core.policies.rule_policy  - There is no applicable rule.
+2022-07-04 09:56:11 DEBUG    rasa.engine.graph  - Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2022-07-04 09:56:11 DEBUG    rasa.core.policies.ensemble  - Made prediction using user intent.
+2022-07-04 09:56:11 DEBUG    rasa.core.policies.ensemble  - Added `DefinePrevUserUtteredFeaturization(False)` event.
+2022-07-04 09:56:11 DEBUG    rasa.core.policies.ensemble  - Predicted next action using AugmentedMemoizationPolicy.
+2022-07-04 09:56:11 DEBUG    rasa.core.processor  - Predicted next action 'utter_checking' with confidence 1.00.
+2022-07-04 09:56:11 DEBUG    rasa.core.processor  - Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x7fc63dd31d90>]'.
+2022-07-04 09:56:11 DEBUG    rasa.core.processor  - Action 'utter_checking' ended with events '[BotUttered('checking account', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"utter_action": "utter_checking"}, 1656928571.5998878)]'.
+2022-07-04 09:56:11 DEBUG    rasa.engine.runner.dask  - Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fc63e682d30>}, targets: ['select_prediction'] and ExecutionContext(model_id='2d651ce4924743e992724262289f4d4d', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2022-07-04 09:56:11 DEBUG    rasa.engine.graph  - Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2022-07-04 09:56:11 DEBUG    rasa.engine.graph  - Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2022-07-04 09:56:11 DEBUG    rasa.engine.graph  - Node 'run_AugmentedMemoizationPolicy0' running 'AugmentedMemoizationPolicy.predict_action_probabilities'.
+2022-07-04 09:56:11 DEBUG    rasa.core.policies.memoization  - Current tracker state:
+[state 1] user intent: block | user entities: ('account_type',) | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 2] user intent: block | user entities: ('account_type',) | previous action name: utter_block_account | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 3] user intent: greet | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 4] user intent: greet | previous action name: utter_greet | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 5] user intent: greet | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 6] user intent: greet | previous action name: utter_greet | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 7] user intent: block | user entities: ('account_type',) | previous action name: action_listen | slots: {'account_type': (0.0, 1.0, 0.0, 0.0)}
+[state 8] user intent: block | user entities: ('account_type',) | previous action name: utter_checking | slots: {'account_type': (0.0, 1.0, 0.0, 0.0)}
+2022-07-04 09:56:11 DEBUG    rasa.core.policies.memoization  - Launch DeLorean...
+2022-07-04 09:56:11 DEBUG    rasa.core.policies.memoization  - Current tracker state [{}, {'user': {'intent': 'block', 'entities': ('account_type',)}, 'slots': {'account_type': (0.0, 1.0, 0.0, 0.0)}, 'prev_action': {'action_name': 'action_listen'}}, {'user': {'intent': 'block', 'entities': ('account_type',)}, 'slots': {'account_type': (0.0, 1.0, 0.0, 0.0)}, 'prev_action': {'action_name': 'utter_checking'}}]
+2022-07-04 09:56:11 DEBUG    rasa.core.policies.memoization  - There is a memorised next action 'action_listen'
+2022-07-04 09:56:11 DEBUG    rasa.engine.graph  - Node 'run_RulePolicy1' running 'RulePolicy.predict_action_probabilities'.
+2022-07-04 09:56:11 DEBUG    rasa.core.policies.rule_policy  - Current tracker state:
+[state 1] user intent: block | user entities: ('account_type',) | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 2] user intent: block | user entities: ('account_type',) | previous action name: utter_block_account | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 3] user intent: greet | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 4] user intent: greet | previous action name: utter_greet | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 5] user intent: greet | previous action name: action_listen | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 6] user intent: greet | previous action name: utter_greet | slots: {'account_type': (1.0, 0.0, 0.0, 0.0)}
+[state 7] user intent: block | user entities: ('account_type',) | previous action name: action_listen | slots: {'account_type': (0.0, 1.0, 0.0, 0.0)}
+[state 8] user intent: block | user entities: ('account_type',) | previous action name: utter_checking | slots: {'account_type': (0.0, 1.0, 0.0, 0.0)}
+2022-07-04 09:56:11 DEBUG    rasa.core.policies.rule_policy  - There is no applicable rule.
+2022-07-04 09:56:11 DEBUG    rasa.engine.graph  - Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2022-07-04 09:56:11 DEBUG    rasa.core.policies.ensemble  - Predicted next action using AugmentedMemoizationPolicy.
+2022-07-04 09:56:11 DEBUG    rasa.core.processor  - Predicted next action 'action_listen' with confidence 1.00.
+2022-07-04 09:56:11 DEBUG    rasa.core.processor  - Policy prediction ended with events '[]'.
+2022-07-04 09:56:11 DEBUG    rasa.core.processor  - Action 'action_listen' ended with events '[]'.
+2022-07-04 09:56:11 DEBUG    rasa.core.lock_store  - Deleted lock for conversation 'test_convo_diff_value'.
